@@ -7,20 +7,42 @@
     tools:context="com.example.android.dw6_countbook.MainActivity">
 
 
-<ListView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content">
-
-
-
-</ListView>
-
-    <Button
+    <TextView
+        android:id="@+id/countersTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="Counters:" />
+
+    <ListView
+        android:id="@+id/counterListView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/buttonAdd"
+        app:layout_constraintTop_toBottomOf="@+id/countersTitle"
+        tools:scrollbars="vertical">
+
+
+    </ListView>
+
+    <Button
+        android:id="@+id/buttonAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:layout_marginRight="8dp"
-        app:layout_constraintRight_toRightOf="parent"
-        android:text="@string/add_button"/>
+        android:text="@string/add_button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <!-- find delete button inside counter
+    <Button
+        android:id="@+id/buttonDelete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="8dp"
+        android:text="delete"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent" />
+        -->
 </android.support.constraint.ConstraintLayout>
