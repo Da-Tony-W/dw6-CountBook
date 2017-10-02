@@ -128,10 +128,6 @@ public class MainActivity extends AppCompatActivity {
         String numberOfCounters = "Number of Counters:" + counterListView.getAdapter().getCount();
         countersTitle.setText(numberOfCounters);
 
-        //String[] counters = loadFromFile();
-        //ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-        //       R.layout.list_item, counters);
-        //oldTweetsList.setAdapter(adapter);
     }
 
 

@@ -59,15 +59,7 @@ public class AddNewCounterActivity extends AppCompatActivity {
         final Button button2 = (Button) findViewById(R.id.button2);
         Intent intent = getIntent();
 
-        /** the following lines are commented out and should be ignored, failed to implement
-         *  EditText only allows non negative number, and Integer.parseInt makes sure it's int so we are good for
-         *  if I cannot get it to work as I intended, should be deleted before final push
-         //int position = intent.getIntExtra("position", 0);
-         // reference https://stackoverflow.com/questions/4384890/how-to-disable-an-android-button answer by Deepak Sharma
-         // also https://stackoverflow.com/questions/8225245/enable-and-disable-button-according-to-the-text-in-edittext-in-android
-         // button2.setEnabled(false);          // enable by btn.setEnabled(true);
 
-         */
 
         button2.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -92,8 +84,11 @@ public class AddNewCounterActivity extends AppCompatActivity {
     }
 
 
-/** this part of code is commented out and should be ignored, cannot make it work for now, might try to come back later
- *  if I cannot get it to work as I intended, should be deleted before final push
+/** this part of code is commented out and should be ignored
+ * was trying to get rid of onClickListener by simply using android:onClick but
+ * cannot make it work for now, might try to come back later
+ * the next important part is loadFromFile
+ *
  public void saveNew(View v){
  Intent intent = getIntent();
  // name
