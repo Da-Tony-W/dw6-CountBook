@@ -1,3 +1,9 @@
+
+/**
+ * Class name: OperateCounterActivity
+ * Version: 1.0
+ * Date October 1st, 2017
+ */
 package com.example.android.dw6_countbook;
 
 import android.app.Activity;
@@ -29,6 +35,15 @@ import static com.example.android.dw6_countbook.R.id.commentTextView;
 import static com.example.android.dw6_countbook.R.id.counterName;
 import static com.example.android.dw6_countbook.R.id.positionTextView;
 import static com.example.android.dw6_countbook.R.id.reset_button;
+
+
+/**
+ * @author Tony
+ * @date 2017-10-01
+ * @see Counter
+ * @see EditCounterActivity
+ *
+ */
 
 public class OperateCounterActivity extends AppCompatActivity {
 
@@ -81,30 +96,38 @@ public class OperateCounterActivity extends AppCompatActivity {
         // reference https://stackoverflow.com/questions/23981008/how-to-replace-existing-value-of-arraylist-element-in-java
 
 
+        /**
+         * call counter.inc() when increment button is clicked,
+         */
         inc_button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 setResult(Activity.RESULT_OK);
                 counter.inc();
                 counter.setDate();
                 currentValueTextView.setText(Integer.toString(counter.getValue()));
-                counters.set(position,counter);
+                counters.set(position, counter);
                 saveInFile();
             }
         });
 
+        /**
+         * call counter.dec() to decrease current value, then update date and svae changes to counter object
+         * tells parent RESULT_OK
+         */
         dec_button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 setResult(RESULT_OK);
                 counter.dec();
                 counter.setDate();
                 currentValueTextView.setText(Integer.toString(counter.getValue()));
-                counters.set(position,counter);
+                counters.set(position, counter);
                 saveInFile();
             }
         });
 
-
-
+        /**
+         * remove counter from counter array list
+         */
         delete_button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 setResult(RESULT_OK);
@@ -114,14 +137,16 @@ public class OperateCounterActivity extends AppCompatActivity {
                 finish();
             }
         });
-
+        /**
+         * reset counter and update date
+         */
         reset_button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 setResult(RESULT_OK);
                 counter.reset();
                 counter.setDate();
                 currentValueTextView.setText(Integer.toString(counter.getValue()));
-                counters.set(position,counter);
+                counters.set(position, counter);
                 saveInFile();
             }
         });

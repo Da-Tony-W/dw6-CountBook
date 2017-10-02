@@ -17,15 +17,15 @@
         android:id="@+id/counterListView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@+id/buttonAdd"
-        app:layout_constraintTop_toBottomOf="@+id/countersTitle"
-
-        tools:scrollbars="vertical"
-
-        app:layout_constraintVertical_bias="0.013"
-        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginBottom="0dp"
         android:layout_marginTop="0dp"
-        android:layout_marginBottom="0dp">
+
+        app:layout_constraintBottom_toTopOf="@+id/buttonAdd"
+
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/countersTitle"
+        app:layout_constraintVertical_bias="0.013"
+        tools:scrollbars="vertical">
 
 
     </ListView>
@@ -36,11 +36,10 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:layout_marginRight="8dp"
+        android:onClick="addNewCounter"
         android:text="@string/add_button"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        android:onClick="addNewCounter"
-        />
+        app:layout_constraintRight_toRightOf="parent" />
 
     <!-- find delete button inside counter
     <Button

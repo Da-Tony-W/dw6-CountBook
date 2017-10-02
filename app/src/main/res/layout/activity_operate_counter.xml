@@ -8,10 +8,10 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true">
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:orientation="vertical">
 
 
         <TextView
@@ -23,11 +23,12 @@
             android:text="Counter Name"
             android:textColor="#03A9F4"
             android:textSize="20sp" />
+
         <TextView
             android:id="@+id/currentValueTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text = "0"
+            android:text="0"
             android:textSize="34sp"
 
 
@@ -40,8 +41,7 @@
             android:layout_height="96dp"
             android:layout_gravity="left"
             android:padding="12dp"
-            android:text="+"
-            />
+            android:text="+" />
 
         <Button
             android:id="@+id/dec_button"
@@ -55,28 +55,30 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text = "Initial value: "
-            />
+            android:text="Initial value: " />
+
         <TextView
             android:id="@+id/initialValueTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text = "0"
-            />
+            android:text="0" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="48dp"
-            android:text = "Comment:"/>
+            android:text="Comment:" />
+
         <TextView
             android:id="@+id/commentTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="no comment"/>
+            android:text="no comment" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="position:"/>
+            android:text="position:" />
 
         <TextView
             android:id="@+id/positionTextView"
@@ -90,26 +92,25 @@
         android:layout_width="96dp"
         android:layout_height="48dp"
 
-        android:text="reset"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true" />
+        android:layout_alignParentLeft="true"
+        android:text="reset" />
 
     <Button
         android:id="@+id/delete_button"
         android:layout_width="96dp"
         android:layout_height="48dp"
-        android:text="Delete"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true" />
+        android:layout_alignParentRight="true"
+        android:text="Delete" />
+
     <Button
         android:id="@+id/edit_button"
         android:layout_width="96dp"
         android:layout_height="48dp"
-        android:text="Edit"
-        android:layout_alignParentTop = "true"
         android:layout_alignParentRight="true"
-        />
-
+        android:layout_alignParentTop="true"
+        android:text="Edit" />
 
 
 </RelativeLayout>

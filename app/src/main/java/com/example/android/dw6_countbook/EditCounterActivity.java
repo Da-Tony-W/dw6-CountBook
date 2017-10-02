@@ -1,3 +1,9 @@
+/**
+ * Class name: EditCounterActivity
+ * Version: 1.0
+ * Date September 30, 2017
+ */
+
 package com.example.android.dw6_countbook;
 
 import android.content.Context;
@@ -27,6 +33,13 @@ import static android.R.id.edit;
 import static android.provider.Telephony.Mms.Part.FILENAME;
 import static com.example.android.dw6_countbook.R.id.setInitialValueEditText;
 
+/**
+ * @author Tony
+ * @date 2017-10-01
+ * @see Counter
+ * @see OperateCounterActivity
+ *
+ */
 public class EditCounterActivity extends AppCompatActivity {
 
     private static final String FILENAME = "file.sav";
@@ -35,7 +48,12 @@ public class EditCounterActivity extends AppCompatActivity {
     private ArrayList<Counter> counters = new ArrayList<Counter>();
     private ArrayAdapter<Counter> adapter;
 
-
+    /**
+     * onCreate, first get position from parent activity, load file
+     * then apply input changes from activity_edit_counter.xml to counter object
+     * when button is clicked
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,7 +81,6 @@ public class EditCounterActivity extends AppCompatActivity {
         int initialValue = counter.getInitialValue();
 
 
-
         button3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -76,7 +93,7 @@ public class EditCounterActivity extends AppCompatActivity {
                 counter.setInitialValue(Integer.parseInt(setInitialValueEditText.getText().toString()));
                 counter.setValue(Integer.parseInt(valueEditText.getText().toString()));
 
-                counters.set(position,counter);
+                counters.set(position, counter);
 
                 saveInFile();
                 finish();
@@ -84,11 +101,7 @@ public class EditCounterActivity extends AppCompatActivity {
         });
 
 
-
-
-
     }
-
 
 
     /**

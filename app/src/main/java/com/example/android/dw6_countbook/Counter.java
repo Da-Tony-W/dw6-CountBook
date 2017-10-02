@@ -31,6 +31,7 @@ public class Counter {
 
     /**
      * Constructor for Counter with no comment, not actualy used
+     *
      * @param counterName
      * @param initialValue
      */
@@ -44,6 +45,7 @@ public class Counter {
 
     /**
      * Constructor for counter,if no comment was added when creating counter, empty string will be used
+     *
      * @param counterName
      * @param comment
      * @param initialValue
@@ -58,44 +60,43 @@ public class Counter {
         this.date = new Date();
     }
 
+    public int getInitialValue() {
+        return this.initialValue;
+    }
 
     /**
      * set initialValue
+     *
      * @param initialValue
      */
-    public void setInitialValue(int initialValue){
-        if (value >= 0){
+    public void setInitialValue(int initialValue) {
+        if (value >= 0) {
             this.initialValue = initialValue;
             setDate();
         }
 
     }
 
-    public int getInitialValue(){
-        return this.initialValue;
+    public int getValue() {
+        return this.value;
     }
-
 
     /**
      * set current value
+     *
      * @param value
      */
-    public void setValue(int value){
-        if (value >= 0){
+    public void setValue(int value) {
+        if (value >= 0) {
             this.value = value;
             setDate();
         }
     }
 
-    public int getValue(){
-        return this.value;
-    }
-
-
     /**
      * increment counter by 1;
      */
-    public void inc(){
+    public void inc() {
         ++this.value;
         setDate();
     }
@@ -104,47 +105,48 @@ public class Counter {
      * check if counter current value is greater than one, if so, decrement counter by 1
      * TODO:throw exception
      */
-    public void dec(){
-        if (value > 0){
+    public void dec() {
+        if (value > 0) {
             --this.value;
             setDate();
         }
     }
 
-
-    /**
-     * set counter name
-     * @param counterName
-     */
-    public void setName(String counterName){
-        this.counterName = counterName;
-    }
-
     /**
      * get counter name
+     *
      * @return counterName
      */
-    public String getName(){
+    public String getName() {
         return this.counterName;
     }
 
     /**
-     * set comment string
-     * @param comment
+     * set counter name
+     *
+     * @param counterName
      */
-    public void setComment(String comment){
-        this.comment = comment;
+    public void setName(String counterName) {
+        this.counterName = counterName;
     }
 
     /**
      * comment getter
+     *
      * @return
      */
-    public String getComment(){
+    public String getComment() {
         return this.comment;
     }
 
-
+    /**
+     * set comment string
+     *
+     * @param comment
+     */
+    public void setComment(String comment) {
+        this.comment = comment;
+    }
 
     public Date getDate() {
         return date;
@@ -157,21 +159,33 @@ public class Counter {
         this.date = new Date();
     }
 
-    public void reset(){
+    public void reset() {
         this.value = this.initialValue;
         this.date = new Date();
     }
 
     /**
+     * set string to empty strings and ints to 0
+     * not really useful, cuz java is a garbage collector
+     */
+    public void delete(){
+        this.value = 0;
+        this.initialValue = 0;
+        this.comment = "";
+        this.counterName = "";
+    }
+
+    /**
      * format display String
+     *
      * @return
      */
     @Override
-    public String toString(){
+    public String toString() {
         // reference https://stackoverflow.com/questions/8654990/how-can-i-get-current-date-in-android
         String d = new SimpleDateFormat("yyyy-MM-dd").format(new Date());
 
-        return counterName + ", value:" + value + ", date:"+ d +", "+ comment;
+        return counterName + ", value:" + value + ", date:" + d + ", " + comment;
 
     }
 

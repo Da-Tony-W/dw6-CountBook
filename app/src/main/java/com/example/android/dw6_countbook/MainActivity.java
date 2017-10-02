@@ -1,8 +1,8 @@
 /**
  * class:MainActivity
- *
+ * <p>
  * Version 1.0
- *
+ * <p>
  * Date September 30, 2017
  */
 package com.example.android.dw6_countbook;
@@ -70,7 +70,6 @@ public class MainActivity extends AppCompatActivity {
          */
 
 
-
         counterListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent,
@@ -97,8 +96,6 @@ public class MainActivity extends AppCompatActivity {
     }
     });
      */
-
-
 
 
     /**
@@ -128,7 +125,7 @@ public class MainActivity extends AppCompatActivity {
         counterListView.setAdapter(adapter);
 
         TextView countersTitle = (TextView) findViewById(R.id.countersTitle);
-        String numberOfCounters = "Number of Counters:"+ counterListView.getAdapter().getCount();
+        String numberOfCounters = "Number of Counters:" + counterListView.getAdapter().getCount();
         countersTitle.setText(numberOfCounters);
 
         //String[] counters = loadFromFile();

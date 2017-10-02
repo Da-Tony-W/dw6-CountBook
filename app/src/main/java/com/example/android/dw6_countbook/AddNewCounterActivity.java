@@ -1,3 +1,8 @@
+/**
+ * Class name: AddNewCounterActivity
+ * Version: 1.0
+ * Date September 30, 2017
+ */
 package com.example.android.dw6_countbook;
 
 import android.content.Context;
@@ -22,6 +27,15 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
+
+/**
+ * @author Tony
+ * @date 2017-09-27
+ * @see Counter
+ * @see AddNewCounterActivity
+ * @see OperateCounterActivity
+ *
+ */
 
 public class AddNewCounterActivity extends AppCompatActivity {
 
