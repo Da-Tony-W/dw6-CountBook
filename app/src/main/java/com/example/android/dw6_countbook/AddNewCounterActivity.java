@@ -37,34 +37,92 @@ public class AddNewCounterActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_new_counter);
+        loadFromFile();
 
         final EditText counterNameEditText = (EditText) findViewById(R.id.counterNameEditText);
         final EditText setInitialValueEditText = (EditText) findViewById(R.id.setInitialValueEditText);
         final EditText commenntEditText = (EditText) findViewById(R.id.commenntEditText);
         final Button button2 = (Button) findViewById(R.id.button2);
-
         Intent intent = getIntent();
-        //int position = intent.getIntExtra("position", 0);
-        loadFromFile();
 
+        /** the following lines are commented out and should be ignored, failed to implement
+         *  EditText only allows non negative number, and Integer.parseInt makes sure it's int so we are good for
+         *  if I cannot get it to work as I intended, should be deleted before final push
+         //int position = intent.getIntExtra("position", 0);
+         // reference https://stackoverflow.com/questions/4384890/how-to-disable-an-android-button answer by Deepak Sharma
+         // also https://stackoverflow.com/questions/8225245/enable-and-disable-button-according-to-the-text-in-edittext-in-android
+         // button2.setEnabled(false);          // enable by btn.setEnabled(true);
 
-        // https://stackoverflow.com/questions/4384890/how-to-disable-an-android-button answer by Deepak Sharma
-        // enable by btn.setEnabled(true);
-        button2.setEnabled(false);
+         */
 
+        button2.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                // When an activity exits, it can call setResult(int), int RESULT_OK
+                setResult(RESULT_OK);
+
+                String name = counterNameEditText.getText().toString();
+
+                // reference https://stackoverflow.com/questions/15037465/converting-edittext-to-int-android answer by Harshid
+                int initialValue = Integer.parseInt(setInitialValueEditText.getText().toString());
+
+                // if no comment was provided, would add empty comment
+                String comment = commenntEditText.getText().toString();
+                counters.add(new Counter(name, comment, initialValue));
+                saveInFile();
+
+                finish();
+            }
+        });
 
 
     }
 
+
+/** this part of code is commented out and should be ignored, cannot make it work for now, might try to come back later
+ *  if I cannot get it to work as I intended, should be deleted before final push
+ public void saveNew(View v){
+ Intent intent = getIntent();
+ // name
+ EditText counterNameEditText = (EditText) findViewById(R.id.counterNameEditText);
+ // init val
+ EditText setInitialValueEditText = (EditText) findViewById(R.id.setInitialValueEditText);
+ // comment
+ EditText commenntEditText = (EditText) findViewById(R.id.commenntEditText);
+ Button button2 = (Button) findViewById(R.id.button2);
+
+ int initValue;
+ String comment = commenntEditText.getText().toString();
+ String counterName = counterNameEditText.getText().toString();
+
+ if (Integer.parseInt(counterNameEditText.getText().toString()) >= 0){
+ initValue = Integer.parseInt(counterNameEditText.getText().toString());
+ }
+
+ // temp solution, if somehow user is able to enter negative value in EditText, set initial value to 0
+ else {
+ initValue = 0;
+ }
+
+ if (comment.isEmpty() && !counterName.isEmpty()){
+ Counter newcounter = new Counter(counterName,initValue);
+ counters.add(newcounter);
+ }
+ else if (!comment.isEmpty() && !counterName.isEmpty()){
+ Counter newcounter = new Counter(counterName,comment,initValue);
+ counters.add(newcounter);
+ }
+
+
+ saveInFile();
+ finish();
+
+
+ }
+
+ */
     /**
      * load file, code from CMPUT301 Lab lonelytwitter source codes
      */
-
-
-    public void saveNew(View v){
-        EditText setInitialValueEditText = (EditText) findViewById(R.id.setInitialValueEditText);
-    }
-
 
     private void loadFromFile() {
 
@@ -114,8 +172,6 @@ public class AddNewCounterActivity extends AppCompatActivity {
             throw new RuntimeException();
         }
     }
-
-
 
 
 }

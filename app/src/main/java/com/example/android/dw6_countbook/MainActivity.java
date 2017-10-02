@@ -116,6 +116,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    /**
+     * load file, code from CMPUT301 Lab lonelytwitter source codes
+     */
+
     private void loadFromFile() {
 
         try {

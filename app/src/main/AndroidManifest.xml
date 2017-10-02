@@ -18,7 +18,8 @@
         </activity>
         <activity android:name=".Counter" />
         <activity android:name=".AddNewCounterActivity" />
-        <activity android:name=".OperateCounterActivity"></activity>
+        <activity android:name=".OperateCounterActivity" />
+        <activity android:name=".EditCounterActivity"></activity>
     </application>
 
 </manifest>

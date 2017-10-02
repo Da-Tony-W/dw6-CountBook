@@ -14,15 +14,24 @@ public class Counter {
     private int initialValue;
     private int value;      // current value of the counter
 
+    public Counter(String counterName, int initialValue) {
+        this.counterName = counterName;
+        this.initialValue = initialValue;
+        this.value = initialValue;
+        this.date = new Date();
+    }
+
     public Counter(String counterName, String comment, int initialValue) {
         this.counterName = counterName;
         this.comment = comment;
         this.initialValue = initialValue;
+        this.value = initialValue;
 
         this.date = new Date();
-
-
     }
+
+
+
 
     public void setInitialValue(int initialValue){
         if (value >= 0){
@@ -85,12 +94,17 @@ public class Counter {
         this.date = new Date();
     }
 
+    public void reset(){
+        this.value = this.initialValue;
+        this.date = new Date();
+    }
+
     @Override
     public String toString(){
         // reference https://stackoverflow.com/questions/8654990/how-can-i-get-current-date-in-android
         String d = new SimpleDateFormat("yyyy-MM-dd").format(new Date());
 
-        return counterName + ", value:" + value + ", date:"+ d +", ";
+        return counterName + ", value:" + value + ", date:"+ d +", "+ comment;
 
     }
 
