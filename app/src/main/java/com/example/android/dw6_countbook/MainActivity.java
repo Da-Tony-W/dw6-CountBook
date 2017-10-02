@@ -11,6 +11,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.example.android.dw6_countbook.AddNewCounterActivity;
 import com.example.android.dw6_countbook.Counter;
@@ -52,6 +53,8 @@ public class MainActivity extends AppCompatActivity {
          * reference: Java for Android  2nd Edition by Budi Kurniavan Chinese version Chapter 31, Listing 31.4
          * and https://stackoverflow.com/questions/5644543/passing-listview-row-positions-through-intents-to-another-class
          */
+
+
 
         counterListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -108,6 +111,10 @@ public class MainActivity extends AppCompatActivity {
                 android.R.layout.simple_list_item_1, counters);
         //R.layout.list_item, counters);
         counterListView.setAdapter(adapter);
+
+        TextView countersTitle = (TextView) findViewById(R.id.countersTitle);
+        String numberOfCounters = "Number of Counters:"+ counterListView.getAdapter().getCount();
+        countersTitle.setText(numberOfCounters);
 
         //String[] counters = loadFromFile();
         //ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
