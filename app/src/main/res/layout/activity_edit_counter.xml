@@ -16,11 +16,16 @@
         android:layout_marginTop="48dp"
         android:text="Set Initial Vale:" />
 
+
+
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="12"
-        android:hint="Enter a positive integer" />
+        android:hint="Enter a positive integer"
+        android:digits="0123456789."
+        android:inputType="number"
+        />
 
     <TextView
         android:layout_width="wrap_content"
@@ -32,7 +37,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="12"
-        android:hint="Enter a positive integer" />
+        android:hint="Enter a positive integer"
+        android:digits="0123456789."
+        android:inputType="number"/>
 
     <TextView
         android:layout_width="wrap_content"

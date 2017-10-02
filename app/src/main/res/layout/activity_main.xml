@@ -38,7 +38,9 @@
         android:layout_marginRight="8dp"
         android:text="@string/add_button"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintRight_toRightOf="parent" />
+        app:layout_constraintRight_toRightOf="parent"
+        android:onClick="addNewCounter"
+        />
 
     <!-- find delete button inside counter
     <Button

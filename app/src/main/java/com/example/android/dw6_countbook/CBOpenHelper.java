@@ -2,7 +2,10 @@
  * Class Name: CBOpenHelper
  *  Version = 1
  * Created by Tony on 2017/9/26.
+ *
+ * no longer used, use objects instead of sql
  */
+
 
 package com.example.android.dw6_countbook;
 
