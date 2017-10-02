@@ -10,7 +10,14 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Update Counter" />
+        android:text="Update Counter Name" />
+
+    <EditText
+        android:id="@+id/nameEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="12"
+        android:hint="New Name" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -21,6 +28,7 @@
 
 
     <EditText
+        android:id="@+id/setInitialValueEditText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="12"
@@ -36,12 +44,13 @@
         android:text="Update Current Vale:" />
 
     <EditText
+        android:id="@+id/valueEditText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:digits="0123456789."
         android:ems="12"
         android:hint="Enter a positive integer"
-        android:digits="0123456789."
-        android:inputType="number"/>
+        android:inputType="number" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -50,6 +59,7 @@
         android:text="Comments:" />
 
     <EditText
+        android:id="@+id/editText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="12"

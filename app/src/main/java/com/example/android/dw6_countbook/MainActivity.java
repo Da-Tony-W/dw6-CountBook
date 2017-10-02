@@ -1,3 +1,10 @@
+/**
+ * class:MainActivity
+ *
+ * Version 1.0
+ *
+ * Date September 30, 2017
+ */
 package com.example.android.dw6_countbook;
 
 import android.app.AlertDialog;
@@ -29,6 +36,14 @@ import java.io.OutputStreamWriter;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 
+/**
+ * the Main activity of CountBook
+ * @author Tony (Da Wang)
+ * @version 1.0
+ * @since 1.0
+ * @see Counter
+ * @see AddNewCounterActivity
+ */
 public class MainActivity extends AppCompatActivity {
 
     private static final String FILENAME = "file.sav";

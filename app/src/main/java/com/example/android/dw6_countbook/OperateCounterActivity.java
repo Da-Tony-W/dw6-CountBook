@@ -49,9 +49,10 @@ public class OperateCounterActivity extends AppCompatActivity {
         final int position = intent.getIntExtra("position", 0);
         loadFromFile();
 
+
         final Counter counter = counters.get(position);
-        String comment = counter.getComment();
         String name = counter.getName();
+        String comment = counter.getComment();
         int currentValue = counter.getValue();
         int initialValue = counter.getInitialValue();
 
