@@ -91,6 +91,7 @@ public class MainActivity extends AppCompatActivity {
      */
     public void addNewCounter(View view) {
         Intent intent = new Intent(this, AddNewCounterActivity.class);
+
         startActivity(intent);
     }
 

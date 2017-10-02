@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -36,17 +37,20 @@ public class AddNewCounterActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_new_counter);
-        Intent intent;
-        intent = getIntent();
-        loadFromFile();
+
         final EditText counterNameEditText = (EditText) findViewById(R.id.counterNameEditText);
         final EditText setInitialValueEditText = (EditText) findViewById(R.id.setInitialValueEditText);
         final EditText commenntEditText = (EditText) findViewById(R.id.commenntEditText);
         final Button button2 = (Button) findViewById(R.id.button2);
 
+        Intent intent = getIntent();
+        //int position = intent.getIntExtra("position", 0);
+        loadFromFile();
 
 
-
+        // https://stackoverflow.com/questions/4384890/how-to-disable-an-android-button answer by Deepak Sharma
+        // enable by btn.setEnabled(true);
+        button2.setEnabled(false);
 
 
 
@@ -55,6 +59,12 @@ public class AddNewCounterActivity extends AppCompatActivity {
     /**
      * load file, code from CMPUT301 Lab lonelytwitter source codes
      */
+
+
+    public void saveNew(View v){
+        EditText setInitialValueEditText = (EditText) findViewById(R.id.setInitialValueEditText);
+    }
+
 
     private void loadFromFile() {
 
